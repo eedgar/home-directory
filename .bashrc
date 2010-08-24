@@ -66,6 +66,8 @@ alias depyc='rm -f **/*.pyc'
 alias go="git co"
 alias gc="git ci -m"
 alias ga="git add"
+# git remote add upstream http://github.com/iancmcc/home-directory.git
+alias gpum="git pull upstream master"
 
 # Imports of other files
 if [ -f ~/.zenossrc ]; then
