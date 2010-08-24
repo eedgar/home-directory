@@ -27,7 +27,7 @@ PYPACKAGES=ipython \
 
 .DEFAULT: all
 
-all: bash-config python-packages
+all: bash-config python-packages csupport
 
 activate: $(PYTHON)
 	@source $(BIN)/activate;
@@ -55,10 +55,18 @@ $(VIRTUALENV): | $(TMPDIR)
 	@echo $@
 	@cd $(TMPDIR); wget "http://bitbucket.org/ianb/virtualenv/raw/8dd7663d9811/virtualenv.py"
 
+<<<<<<< HEAD
 csupport: | $(TMPDIR) 
 	@echo $@
 	@cd $(TMPDIR); wget "http://vim.sourceforge.net/scripts/download_script.php?src_id=13077" -O cvim.zip
 	@cd $(TMPDIR);unzip -f cvim.zip;cp -r c-support ~/.vim
+=======
+$(TMPDIR)/cvim.zip: | $(TMPDIR) 
+	@cd $(TMPDIR); wget "http://vim.sourceforge.net/scripts/download_script.php?src_id=13077" -O cvim.zip
+
+csupport : | $(TMPDIR)/cvim.zip
+	@unzip -o -f $(TMPDIR)/cvim.zip -d $(HOME)/.vim
+>>>>>>> 6c2e80bef7f6d41cad5b99cb99b75e039c2803e5
 
 $(PYTHON): $(VIRTUALENV)
 	@python $(VIRTUALENV) $(HOME)
