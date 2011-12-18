@@ -8,7 +8,7 @@ export PROMPT_COMMAND='history -a'
 export PYTHONSTARTUP="/Users/$USER/.pythonrc"
 
 # bash 4.0 options
-shopt -s autocd globstar dirspell 
+shopt -s autocd globstar dirspell
 
 # Turn off the bell
 set bell-style none
@@ -38,7 +38,7 @@ export HISTSIZE=1000000
 #     COMPLETION/GLOBBING     #
 ###############################
 
-# Turn on the extended pattern matching features 
+# Turn on the extended pattern matching features
 shopt -q -s extglob
 
 # Tab to show completion possibilities, case-insensitive

@@ -90,7 +90,7 @@ function! s:JSLint()
   if a:firstline == a:lastline
     let b:firstline = 1
     let b:lastline = '$'
-  else 
+  else
     let b:firstline = a:firstline
     let b:lastline = a:lastline
   endif
@@ -112,7 +112,7 @@ function! s:JSLint()
     let s:runjslint_ext = 'js'
   endif
   let s:plugin_path = s:plugin_path . "/ftplugin/javascript/jslint/"
-  let s:cmd = "cd " . s:plugin_path . " && " . s:cmd . " " . s:plugin_path 
+  let s:cmd = "cd " . s:plugin_path . " && " . s:cmd . " " . s:plugin_path
                \ . "runjslint." . s:runjslint_ext
   let s:jslintrc_file = expand('~/.jslintrc')
   if filereadable(s:jslintrc_file)
@@ -124,7 +124,7 @@ function! s:JSLint()
               \ "\n") . "\n")
 
   for error in split(b:jslint_output, "\n")
-      
+
     " Match {line}:{char}:{message}
     let b:parts = matchlist(error, "\\(\\d\\+\\):\\(\\d\\+\\):\\(.*\\)")
     if !empty(b:parts)

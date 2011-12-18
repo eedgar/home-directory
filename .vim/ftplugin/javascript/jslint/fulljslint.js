@@ -2399,8 +2399,8 @@ JSLINT = function () {
     }
 
     function note_implied(token) {
-        var name = token.value, 
-            line = token.line + 1, 
+        var name = token.value,
+            line = token.line + 1,
             a = implied[name],
             error = {
                 reason    : "Implied global '"+name+"'",

@@ -15,7 +15,7 @@ The rules of indentation are specified in a series of variables.
 
 					*b:defaultIndentExpr*
 b:defaultIndentExpr
-	
+
 	If defined, this value is executed to find the starting indent for a
 	line.  The default is to use the indentation of the previous code
 	line.  But IndentAnything can be used to suplement other, existing
@@ -54,7 +54,7 @@ b:indentTrios
 
 					*b:lineContList*
 b:lineContList
-	
+
 	This is a list of dictionaries specifying the lines that are continued
 	by the next line.  For example, in shell scripts, a trailing '\'
 	indicates that the next line is a continuation.
@@ -93,9 +93,9 @@ b:contTraversesLineComments
 
 					*b:commentRE* *b:lineCommentRE*
 					*b:blockCommentRE*
-b:commentRE 
-b:lineCommentRE  
-b:blockCommentRE 
+b:commentRE
+b:lineCommentRE
+b:blockCommentRE
 
 	These are regular expressions that match the syntax names for comments
 	for the filetype being indented.  Line comments (like '// ...') and
@@ -110,10 +110,10 @@ b:blockCommentRE
 
 					*b:stringRE* *b:singleQuoteStringRE*
 					*b:doubleQuoteStringRE*
-							
-b:stringRE            
-b:singleQuoteStringRE 
-b:doubleQuoteStringRE 
+
+b:stringRE
+b:singleQuoteStringRE
+b:doubleQuoteStringRE
 
 	These are regular expressions that match the syntax names for strings
 	for the filetype being indented.  There are strings in single-quotes
@@ -133,10 +133,10 @@ b:doubleQuoteStringRE
 					*b:blockCommentMiddleRE*
 					*b:blockCommentEndRE*
 					*b:blockCommentMiddleExtra*
-b:blockCommentStartRE  
-b:blockCommentMiddleRE 
-b:blockCommentEndRE    
-b:blockCommentMiddleExtra 
+b:blockCommentStartRE
+b:blockCommentMiddleRE
+b:blockCommentEndRE
+b:blockCommentMiddleExtra
 
 	This allows for special indentation for block comments.  For example,
 	to properly indent C-style comments, use the following:
@@ -176,7 +176,7 @@ b:blockCommentMiddleExtra
 		let b:blockCommentMiddleRE = '-'
 		let b:blockCommentEndRE    = '-->'
 		let b:blockCommentMiddleExtra = 3
-		
+
 <
 
 

@@ -3,8 +3,8 @@
 load('fulljslint.js');
 
 var readSTDIN = function() {
-    var line, 
-        input = [], 
+    var line,
+        input = [],
         emptyCount = 0,
         i;
 

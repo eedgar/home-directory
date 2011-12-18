@@ -78,51 +78,51 @@ vmap ]f   :call PythonDec("function", 1)<CR>
 
 
 " Menu entries
-nmenu <silent> &Python.Update\ IM-Python\ Menu 
+nmenu <silent> &Python.Update\ IM-Python\ Menu
     \:call UpdateMenu()<CR>
 nmenu &Python.-Sep1- :
-nmenu <silent> &Python.Beginning\ of\ Block<Tab>[[ 
+nmenu <silent> &Python.Beginning\ of\ Block<Tab>[[
     \[[
-nmenu <silent> &Python.End\ of\ Block<Tab>]] 
+nmenu <silent> &Python.End\ of\ Block<Tab>]]
     \]]
 nmenu &Python.-Sep2- :
-nmenu <silent> &Python.Shift\ Block\ Left<Tab>]< 
+nmenu <silent> &Python.Shift\ Block\ Left<Tab>]<
     \]<
-vmenu <silent> &Python.Shift\ Block\ Left<Tab>]< 
+vmenu <silent> &Python.Shift\ Block\ Left<Tab>]<
     \]<
-nmenu <silent> &Python.Shift\ Block\ Right<Tab>]> 
+nmenu <silent> &Python.Shift\ Block\ Right<Tab>]>
     \]>
-vmenu <silent> &Python.Shift\ Block\ Right<Tab>]> 
+vmenu <silent> &Python.Shift\ Block\ Right<Tab>]>
     \]>
 nmenu &Python.-Sep3- :
-vmenu <silent> &Python.Comment\ Selection<Tab>]# 
+vmenu <silent> &Python.Comment\ Selection<Tab>]#
     \]#
-nmenu <silent> &Python.Comment\ Selection<Tab>]# 
+nmenu <silent> &Python.Comment\ Selection<Tab>]#
     \]#
-vmenu <silent> &Python.Uncomment\ Selection<Tab>]u 
+vmenu <silent> &Python.Uncomment\ Selection<Tab>]u
     \]u
-nmenu <silent> &Python.Uncomment\ Selection<Tab>]u 
+nmenu <silent> &Python.Uncomment\ Selection<Tab>]u
     \]u
 nmenu &Python.-Sep4- :
-nmenu <silent> &Python.Previous\ Class<Tab>]J 
+nmenu <silent> &Python.Previous\ Class<Tab>]J
     \]J
-nmenu <silent> &Python.Next\ Class<Tab>]j 
+nmenu <silent> &Python.Next\ Class<Tab>]j
     \]j
-nmenu <silent> &Python.Previous\ Function<Tab>]F 
+nmenu <silent> &Python.Previous\ Function<Tab>]F
     \]F
-nmenu <silent> &Python.Next\ Function<Tab>]f 
+nmenu <silent> &Python.Next\ Function<Tab>]f
     \]f
 nmenu &Python.-Sep5- :
-nmenu <silent> &Python.Select\ Block<Tab>]v 
+nmenu <silent> &Python.Select\ Block<Tab>]v
     \]v
-nmenu <silent> &Python.Select\ Function<Tab>]f 
+nmenu <silent> &Python.Select\ Function<Tab>]f
     \]f
-nmenu <silent> &Python.Select\ Class<Tab>]c 
+nmenu <silent> &Python.Select\ Class<Tab>]c
     \]c
 nmenu &Python.-Sep6- :
-nmenu <silent> &Python.Previous\ Line\ wrt\ indent<Tab>]<up> 
+nmenu <silent> &Python.Previous\ Line\ wrt\ indent<Tab>]<up>
     \]<up>
-nmenu <silent> &Python.Next\ Line\ wrt\ indent<Tab>]<down> 
+nmenu <silent> &Python.Next\ Line\ wrt\ indent<Tab>]<down>
     \]<down>
 
 
@@ -139,8 +139,8 @@ function! PythonBoB(line, direction, force_sel_comments)
   let mark = ln
   let indent_valid = strlen(getline(ln))
   let ln = ln + a:direction
-  if (a:direction == 1) && (!a:force_sel_comments) && 
-      \ exists("g:py_select_trailing_comments") && 
+  if (a:direction == 1) && (!a:force_sel_comments) &&
+      \ exists("g:py_select_trailing_comments") &&
       \ (!g:py_select_trailing_comments)
     let sel_comments = 0
   else
@@ -287,7 +287,7 @@ function! PythonNextLine(direction)
   let ln = ln + a:direction
 
   while((ln >= 1) && (ln <= line('$')))
-    if (!indent_valid) && strlen(getline(ln)) 
+    if (!indent_valid) && strlen(getline(ln))
         break
     else
       if (strlen(getline(ln)))
@@ -426,7 +426,7 @@ endfunction
 
 "" This one will work only on vim 6.2 because of the try/catch expressions.
 " function! s:JumpToAndUnfoldWithExceptions(line)
-"  try 
+"  try
 "    execute 'normal '.a:line.'gg15zo'
 "  catch /^Vim\((\a\+)\)\=:E490:/
 "    " Do nothing, just consume the error

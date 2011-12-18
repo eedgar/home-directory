@@ -56,7 +56,7 @@ keystroke.
  1.7.10  Xterm size                             |csupport-run-xterm|
  1.7.11  Output redirection                     |csupport-run-output|
  1.8    Help                                    |csupport-help|
- 
+
  2.    Usage without GUI                        |csupport-usage-vim|
  3.    Hotkeys                                  |csupport-hotkeys|
  4.    Customization and configuration          |csupport-custom|
@@ -259,11 +259,11 @@ There are to file description templates (menu items 'file description (impl.)'
 and  'file description (header)', see also |csupport-templates|):
 
   comment.file-description         : files *.c *.cc *.cp *.cxx *.cpp *.CPP *.c++
-                                      *.C *.i *.ii 
+                                      *.C *.i *.ii
 
   comment.file-description-header  : everything else with filetype 'c' or 'cpp'
 
-The appropriate template will also be included into a new file. The plugin 
+The appropriate template will also be included into a new file. The plugin
 decides on the basis of the file extension. The default is shown above. You
 can change the list by setting a global variable in '~/.vimrc':
 
@@ -271,7 +271,7 @@ can change the list by setting a global variable in '~/.vimrc':
 
   let g:C_SourceCodeExtensions  = 'XYZ c cc cp cxx cpp CPP c++ C i ii'
 
-A new file named 'test.XYZ' will now be considered a C implementation file. 
+A new file named 'test.XYZ' will now be considered a C implementation file.
 
 ------------------------------------------------------------------------------
 
@@ -290,8 +290,8 @@ These section comments can also be inserted using the hotkey \ccs for C/C++
 files, or \chs for H-files. These hotkeys will start the command
 'CFileSectionList' or 'HFileSectionList'  on the command line:
 
- :CFileSectionList 
- :HFileSectionList 
+ :CFileSectionList
+ :HFileSectionList
 
 Now type a <Tab> to start the selection menu to choose from.
 
@@ -303,7 +303,7 @@ Keword comments are end-of-line comments:
 
  /* :<keyword>:<date+time>:<author reference>: <arbitrary comment text> */
 
-Keywords are 
+Keywords are
 
  BUG COMPILER TODO TRICKY WARNING WORKAROUND user-defined-keyword
 
@@ -632,7 +632,7 @@ variable in your ~/.vimrc :
 
  let g:C_GuiSnippetBrowser = 'commandline'
 
-The default value is 'gui'. 
+The default value is 'gui'.
 
 
 1.5.2   PICKING UP PROTOTYPES                                 *csupport-proto*
@@ -1148,7 +1148,7 @@ plugin package) and described in the document c-hot-keys.pdf
 Changing the default map leader '\'
 -----------------------------------
 The map leader can be changed by the user by setting a global variable in the
-file .vimrc 
+file .vimrc
 
  let g:C_MapLeader  = ','
 
@@ -1182,7 +1182,7 @@ source file the file ~/.vimrc should contain a line
 A header file will only be opened if it already exists.
 
 The Shift-key is dead when you are working with Vim in a console terminal
-(non-Gui). You could add 
+(non-Gui). You could add
 
   noremap   \a        :A<CR>
  inoremap   \a   <C-C>:A<CR>
@@ -1266,8 +1266,8 @@ The variable plugin_dir will automatically be set to one of the following values
            g:C_Printheader        : hardcopy: definition of the page header
            g:C_MapLeader          : the map leader for hotkeys (see|csupport-usage-vim|)
            g:C_GuiSnippetBrowser  : code snippet browser: 'gui', 'commandline'
-           g:C_GuiTemplateBrowser : code template browser: 'gui', 'explorer', 'commandline' 
- 
+           g:C_GuiTemplateBrowser : code template browser: 'gui', 'explorer', 'commandline'
+
  3. group: g:C_CExtension             : Extension of C files. Everything else is C++.
            g:C_TypeOfH                : filetype of header files with extension 'h' (c,cpp)
            g:C_SourceCodeExtensions   : filename extensions for C/C++
@@ -1740,14 +1740,14 @@ There are four macro types which can be used as jump targets in templates:
  <+text+>   Can be jumped to by hitting Ctrl-j.
  {+text+}   Same as <+text+>. Used in cases where indentation gives unwanted
             results with the first one.
- 
+
  <-text->   Same as the two above. Will be removed if the template is used
  {-text-}   in visual mode.
 
 The text inside the brackets is userdefined and can be empty. The text
 can be composed from letters (uppercase and lowercase), digits, underscores
 and blanks. After the insertion of an template these jump targets will be
-highlighted. 
+highlighted.
 
 5.3.5  Command Ctrl-j                                        *csupport-Ctrl-j*
 
@@ -1764,7 +1764,7 @@ The template for a function can be written as follows:
  <SPLIT>  return <+return value+>;
  }    /* -----  end of function |FUNCTION_NAME|  ----- */
 
-The cursor will be set behind 'void'. You can remove 'void' easily with 
+The cursor will be set behind 'void'. You can remove 'void' easily with
 Ctrl-w (delete word before cursor) and insert a new type. A Ctrl-j leads you
 to the argument list. The target disappears and you can type on. When the
 function body is written a final Ctrl-j brings you to the return statement.
@@ -1781,7 +1781,7 @@ indentation will be correct.
  == cpp.open-input-file ==
  char *ifs_file_name = "<CURSOR>";    /* input  file name       */
  ifstream ifs;              /* create ifstream object */
- 
+
  ifs.open (ifs_file_name);    /* open ifstream          */
  if (!ifs) {
   cerr << "\nERROR : failed to open input  file " << ifs_file_name << endl;
@@ -1808,7 +1808,7 @@ can switch them off.  Put the following line in the file .vimrc :
 
 The default value of g:C_Ctrl_j is 'on'. You do not have to change the
 template files. All jump targets will be removed before a template will be
-inserted. 
+inserted.
 
 ==============================================================================
 5.4  SWITCHING BETWEEN TEMPLATE SETS                 *csupport-templates-sets*
@@ -1843,7 +1843,7 @@ IF-ENDIF-construct to choose a particular set of files for example:
 The syntax is as follows:
 
   == IF macro_name IS macro_value  ==
-   
+
   == ENDIF ==
 
 IF, IS, and ENDIF are keywords.
@@ -1964,7 +1964,7 @@ Now add the following lines to the file $HOME/.vimrc :
 
   let tlist_template_settings  = 'template;t:template'
   "---------------------------------------------------------------
-  " plugin templates : set filetype for *.template  
+  " plugin templates : set filetype for *.template
   "---------------------------------------------------------------
   if has("autocmd")
     autocmd BufNewFile,BufRead Templates  set filetype=template
@@ -1996,7 +1996,7 @@ and a warning will be shown.
 Visual mode
 -----------
 A range of lines containing closed folds can be surrounded by constructs which
-have a visual mode, e.g. a for-loop: 
+have a visual mode, e.g. a for-loop:
 
     for ( ; ; ) {
   +---  4 lines: {------------------------------------------------------------
@@ -2013,7 +2013,7 @@ There are a few additional filetype specific key mappings defined in
 
 Complete a classical C comment: '/*' => '/* | */' (modes: i,v).
 
-Complete a classical C multi-line comment (mode: i): 
+Complete a classical C multi-line comment (mode: i):
   '/*<CR>' =>  /*
                 * |
                 */

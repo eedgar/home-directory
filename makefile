@@ -46,7 +46,7 @@ bash-config-setup:
 		fi; \
 	done
 
-bash-config: bash-config-setup $(BASHFILES) 
+bash-config: bash-config-setup $(BASHFILES)
 
 $(BASHFILES):
 	@ln -s $(MAKEFILEDIR)/`basename $@` $@
@@ -56,12 +56,12 @@ $(VIRTUALENV): | $(TMPDIR)
 	@cd $(TMPDIR); wget "http://bitbucket.org/ianb/virtualenv/raw/8dd7663d9811/virtualenv.py"
 
 <<<<<<< HEAD
-csupport: | $(TMPDIR) 
+csupport: | $(TMPDIR)
 	@echo $@
 	@cd $(TMPDIR); wget "http://vim.sourceforge.net/scripts/download_script.php?src_id=13077" -O cvim.zip
 	@cd $(TMPDIR);unzip -f cvim.zip;cp -r c-support ~/.vim
 =======
-$(TMPDIR)/cvim.zip: | $(TMPDIR) 
+$(TMPDIR)/cvim.zip: | $(TMPDIR)
 	@cd $(TMPDIR); wget "http://vim.sourceforge.net/scripts/download_script.php?src_id=13077" -O cvim.zip
 
 csupport : | $(TMPDIR)/cvim.zip
