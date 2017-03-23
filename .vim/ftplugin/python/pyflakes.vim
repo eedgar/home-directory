@@ -142,7 +142,7 @@ if !exists("*s:RunPyflakes")
         else
             let b:cleared = 1
         endif
-        
+
         let b:matched = []
         let b:matchedlines = {}
         python << EOF

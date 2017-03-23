@@ -8,15 +8,15 @@ endif
 
 let colors_name = "blackboard"
 
-hi Normal		guifg=#ffffff guibg=#0D1021						
+hi Normal		guifg=#ffffff guibg=#0D1021
 
-hi Comment	    guifg=#aeaeae gui=italic 
+hi Comment	    guifg=#aeaeae gui=italic
 hi Constant	    guifg=#d7fa41 gui=none
 hi String       guifg=#64ce3e gui=none
 hi Statement    guifg=#f8de33 gui=none
 hi Entity       guifg=#fa6513 gui=none
 hi Support      guifg=#8fa6cd gui=none
-hi LineNr       guifg=#aeaeae guibg=#000000 gui=none 
+hi LineNr       guifg=#aeaeae guibg=#000000 gui=none
 hi Title		guifg=#f6f3e8 guibg=NONE	gui=bold
 hi NonText 		guifg=#808080 guibg=#0D1021	gui=none
 

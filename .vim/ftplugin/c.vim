@@ -3,14 +3,14 @@
 " Vim filetype plugin file
 "
 "   Language :  C / C++
-"     Plugin :  c.vim 
+"     Plugin :  c.vim
 " Maintainer :  Fritz Mehner <mehner@fh-swf.de>
 "   Revision :  $Id: c.vim,v 1.51 2009/10/21 18:14:45 mehner Exp $
 "
 " ------------------------------------------------------------------------------
 "
 " Only do this when not done yet for this buffer
-" 
+"
 if exists("b:did_C_ftplugin")
   finish
 endif
@@ -20,18 +20,18 @@ let b:did_C_ftplugin = 1
 "
 if exists("g:C_MapLeader")
   let maplocalleader  = g:C_MapLeader
-endif    
+endif
 "
 " ---------- C/C++ dictionary -----------------------------------
 " This will enable keyword completion for C and C++
 " using Vim's dictionary feature |i_CTRL-X_CTRL-K|.
 " Set the new dictionaries in front of the existing ones
-" 
+"
 if exists("g:C_Dictionary_File")
 	let	save=&dictionary
   silent! exe 'setlocal dictionary='.g:C_Dictionary_File
   silent! exe 'setlocal dictionary+='.save
-endif    
+endif
 "
 " ---------- F-key mappings  ------------------------------------
 "
@@ -117,7 +117,7 @@ inoremap    <buffer>            <LocalLeader>ccs   <Esc>:CFileSection<Space>
 inoremap    <buffer>            <LocalLeader>chs   <Esc>:HFileSection<Space>
 inoremap    <buffer>            <LocalLeader>ckc   <Esc>:KeywordComment<Space>
 inoremap    <buffer>            <LocalLeader>csc   <Esc>:SpecialComment<Space>
-" 
+"
 " ---------- statements menu  ------------------------------------------------
 "
  noremap    <buffer>  <silent>  <LocalLeader>sd         :call C_InsertTemplate("statements.do-while")<CR>
@@ -198,7 +198,7 @@ vnoremap    <buffer>  <silent>  <LocalLeader>pie  <Esc>:call C_InsertTemplate("p
 vnoremap    <buffer>  <silent>  <LocalLeader>pid  <Esc>:call C_InsertTemplate("preprocessor.ifdef-else-endif", "v")<CR>
 vnoremap    <buffer>  <silent>  <LocalLeader>pin  <Esc>:call C_InsertTemplate("preprocessor.ifndef-else-endif", "v")<CR>
 vnoremap    <buffer>  <silent>  <LocalLeader>pind <Esc>:call C_InsertTemplate("preprocessor.ifndef-def-endif", "v")<CR>
-                                     
+
 inoremap    <buffer>  <silent>  <LocalLeader>pie  <Esc>:call C_InsertTemplate("preprocessor.if-else-endif")<CR>
 inoremap    <buffer>  <silent>  <LocalLeader>pid  <Esc>:call C_InsertTemplate("preprocessor.ifdef-else-endif")<CR>
 inoremap    <buffer>  <silent>  <LocalLeader>pin  <Esc>:call C_InsertTemplate("preprocessor.ifndef-else-endif")<CR>
@@ -380,7 +380,7 @@ imap    <buffer>  <silent>  <LocalLeader>ro    <C-C>:call C_Toggle_Gvim_Xterm()<
 "
 " Abraxas CodeCheck (R)
 "
-if executable("check") 
+if executable("check")
   map    <buffer>  <silent>  <LocalLeader>rk         :call C_CodeCheck()<CR>:redraw!<CR>:call C_HlMessage()<CR>
   map    <buffer>  <silent>  <LocalLeader>re         :call C_CodeCheckArguments()<CR>
  imap    <buffer>  <silent>  <LocalLeader>rk    <C-C>:call C_CodeCheck()<CR>:redraw!<CR>:call C_HlMessage()<CR>
@@ -400,7 +400,7 @@ inoremap  <buffer>  /*       /*<Space><Space>*/<Left><Left><Left>
 vnoremap  <buffer>  /*      s/*<Space><Space>*/<Left><Left><Left><Esc>p
 "
 "-------------------------------------------------------------------------------
-" additional mapping : complete a classical C multi-line comment: 
+" additional mapping : complete a classical C multi-line comment:
 "                      '/*<CR>' =>  /*
 "                                    * |
 "                                    */
